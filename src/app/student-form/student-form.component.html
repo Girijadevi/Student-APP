@@ -1,0 +1,29 @@
+<form #studentForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <mat-form-field class="student-name">
+      <mat-label>Student Name</mat-label>
+      <input matInput placeholder="Enter name" [(ngModel)]="student.name" name="name" required>
+    </mat-form-field>
+
+    <mat-form-field class="student-grade">
+      <mat-label>Grade</mat-label>
+      <mat-select [(ngModel)]="student.grade" name="grade" required>
+        <mat-option *ngFor="let grade of grades" [value]="grade">{{ grade }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="student-age">
+    <mat-label>Age</mat-label>
+    <input matInput type="number" placeholder="Enter age" [(ngModel)]="student.age" name="age" min="5" max="18" required>
+  </mat-form-field>
+
+  <mat-radio-group [(ngModel)]="student.gender" name="gender" class="gender-group">
+    <mat-radio-button value="Male">Male</mat-radio-button>
+    <mat-radio-button value="Female">Female</mat-radio-button>
+  </mat-radio-group>
+
+  <div class="submit-btn">
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </div>
+</form>

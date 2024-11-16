@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* Add to styles.css or inside component styles */
+
+/* Flex container for form and table side by side */
+.container {
+  display: flex;
+  justify-content: space-between; /* Space out the form and table */
+  gap: 20px; /* Adds space between the form and table */
+  margin: 20px; /* Adds margin around the container */
+}
+
+/* Container for the student form with a border */
+.student-form-container {
+  flex: 1; /* Take up 50% of the container width */
+  max-width: 500px; /* Optionally, set a max-width to limit the form's size */
+}
+
+.student-table-container {
+  flex: 2; /* Take up more space for the table */
+  overflow-x: auto; /* Allow scrolling if the table overflows */
+  max-width: 700px; /* Optionally, set a max-width for the table */
+}
+
+/* Border style for both form and table containers */
+.border-box {
+  border: 2px solid #ccc; /* Adds a light grey border around the form/table */
+  padding: 20px; /* Adds padding inside the border */
+  border-radius: 8px; /* Optional: Rounds the corners */
+  background-color: #f9f9f9; /* Optional: Adds background color */
+}
+
+mat-card {
+  margin-bottom: 20px;
+}
+
+/* Styling for the table */
+table {
+  width: 100%; /* Make the table take full width of the container */
+  border-collapse: collapse; /* Collapses table borders */
+  border: 1px solid #ccc; /* Adds a border to the table */
+}
+
+table th, table td {
+  border: 1px solid #ccc; /* Adds borders to table cells */
+  padding: 8px; /* Adds padding inside table cells */
+  text-align: left; /* Align text to the left */
+}
+
+/* Optional: Adds hover effect for table rows */
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack form and table vertically on smaller screens */
+    gap: 10px; /* Reduce gap when stacking vertically */
+  }
+
+  .student-form-container,
+  .student-table-container {
+    flex: none; /* Allow containers to take full width in stacked view */
+    max-width: none;
+  }
+}
